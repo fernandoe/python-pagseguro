@@ -169,11 +169,11 @@ class PagSeguro(object):
 
     def get(self, url):
         """ do a get transaction """
-        return requests.get(url, params=self.data, headers=self.config.HEADERS)
+        return requests.get(url, params=self.data, headers=self.config.HEADERS, verify=False)
 
     def post(self, url):
         """ do a post request """
-        return requests.post(url, data=self.data, headers=self.config.HEADERS)
+        return requests.post(url, data=self.data, headers=self.config.HEADERS, verify=False)
 
     def checkout(self, **kwargs):
         """ create a pagseguro checkout """
